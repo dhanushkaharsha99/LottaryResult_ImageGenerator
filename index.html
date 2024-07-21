@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasana Mandiraya</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+      <div class="header">
+        <h3 class="stroke-text"> W.A.P.P.Aleddin Perera Wasana Mandira</h3>
+        <span id="today-date"></span>
+      </div>
+      <div class="body">
+        <div class="button-container">
+          <button class="button toggle-button " id="ada-kotipathi-button" onclick="toggleForms(value)" value="Ada Kotipathi" >අද කෝටිපති</button>
+          <button class="button toggle-button " id="dhana-nidanata-button" onclick="toggleForms(value)" value="Dana Nidanaya" >ධන නිධානය</button>
+          <button class="button toggle-button " id="govisetha-button" onclick="toggleForms(value)" value="Govisetha">ගොවිසෙත</button>
+          <button class="button toggle-button " id="hadahana-button" onclick="toggleForms(value)" value="Hadahana">හදහන</button>
+          <button class="button toggle-button " id="kapruka-button" onclick="toggleForms(value)" value="Kapruka">කප් රුක</button>
+          <button class="button toggle-button " id="lagna-wasanawa-button" onclick="toggleForms(value)" value="Lagna wasanawa" >ලග්න වාසනාව</button>
+          <button class="button toggle-button " id="lucky-7-button"  onclick="toggleForms(value)" value="Lucky 7">ලකී 7</button>
+          <button class="button toggle-button" id="mahajana-sampatha-button" onclick="toggleForms(value)" value="Mahajana Sampatha">මහජන සම්පත</button>
+          <button class="button toggle-button " id="mega-power-button" onclick="toggleForms(value)"  value="Mega Power" >මෙග පවර්</button>
+          <button class="button toggle-button " id="shanida-wasanawa-button" onclick="toggleForms(value)" value="Shanida Wasana" >ශනිදා වාසනාව</button>
+          <button class="button toggle-button " id="super-ball-button" onclick="toggleForms(value)" value="Super Ball">සුපර් බෝල්</button>
+          <button class="button toggle-button " id="supiri-dana-sampatha-button" onclick="toggleForms(value)" value="Supiri Dana Sampatha">සුපිරි ධන සම්පත</button>
+          <button class="button toggle-button " id="jayoda-button" onclick="toggleForms(value)" value="jayoda">ජයෝදා</button>
+          <button class="button toggle-button " id="sasiri-button" onclick="toggleForms(value)" value="Sasiri">සසිරි</button>
+
+        </div>
+  
+        <!-- Form containers  -->
+        <div class="form">
+            
+          <!-- Mahajana sampatha form -->
+          <form id="mahajana-sampatha-form" class="forms">
+            <span class="form-header">Add Today <span id="ticket-name">Mahajana Sampatha</span> Results Here</span>
+            <div class="date-and-draw-number">
+              <input type="number" placeholder="Draw number" id="mahajanaSampathaDraw-number" class="inputs" oninput="updateDetails('mahajanaSampatha')"/>
+
+            </div>
+            <div class="numbers">
+              <input type="text" id="mahajanaSampathaLatter" class="latter" oninput="updateDetails('mahajanaSampatha')"/>
+              <input type="number" id="mahajanaSampathaNumber-one" class="number" oninput="updateDetails('mahajanaSampatha')"/>
+              <input type="number" id="mahajanaSampathaNumber-two" class="number" oninput="updateDetails('mahajanaSampatha')"/>
+              <input type="number" id="mahajanaSampathaNumber-three" class="number" oninput="updateDetails('mahajanaSampatha')"/>
+              <input type="number" id="mahajanaSampathaNumber-four" class="number" oninput="updateDetails('mahajanaSampatha')"/>
+              <input type="number" id="mahajanaSampathaNumber-five" class="number" oninput="updateDetails('mahajanaSampatha')"/>
+              <input type="number" id="mahajanaSampathaNumber-six" class="number" oninput="updateDetails('mahajanaSampatha')"/>
+            </div>
+            <textarea class="text-area" id="mahajanaSampathaSpecialResults" placeholder="Add special results" 
+            oninput="updateDetails('mahajanaSampatha')"></textarea>
+
+            <div class="form-button">
+              <input type="reset" class="button reset" value="Reset" />
+            </div>
+          </form>  
+  
+          <!-- Ada kotipathi form -->
+          <form id="adakotipathi-form" class="forms">
+            <span class="form-header">Add Today <span id="ticket-name">අද කෝටිපති</span> Results Here</span>
+            <div class="date-and-draw-number">
+              <input type="number" placeholder="Draw number" id="adaKotipathiDraw-number" class="inputs" oninput="updateDetails('adaKotipathi')"/>
+              <input type="number" placeholder="Number" id="adaKotipathiTicketNumber"  class="inputs" oninput="updateDetails('adaKotipathi')"/>
+            </div>
+            <div class="numbers">
+              <input type="text" id="adaKotipathiLatter" class="latter" oninput="updateDetails('adaKotipathi')"/>
+              <input type="number" id="adaKotipathiNumber-one" class="number" oninput="updateDetails('adaKotipathi')"/>
+              <input type="number" id="adaKotipathiNumber-two" class="number" oninput="updateDetails('adaKotipathi')"/>
+              <input type="number" id="adaKotipathiNumber-three" class="number" oninput="updateDetails('adaKotipathi')"/>
+              <input type="number" id="adaKotipathiNumber-four" class="number special" oninput="updateDetails('adaKotipathi')"/>
+            </div>
+            <textarea class="text-area" id="adaKotipathiSpecialResults" oninput="updateDetails('adaKotipathi')"></textarea>
+
+            <div class="form-button">           
+              <input type="reset" class="button reset" value="Reset" />
+            </div>
+          </form>
+
+          <!-- Dana nidana form -->
+          <form id="dananidanaya-form" class="forms">
+            <span class="form-header">Add Today <span id="ticket-name">ධන නිධානය</span> Results Here</span>
+            <div class="date-and-draw-number">
+              <input type="number" placeholder="Draw number" id="dananidanayaDraw-number" class="inputs" oninput="updateDetails('dananidanaya')"/>
+              <input type="number" placeholder="Number" id="dananidanaya-TicketNumber"  class="inputs" oninput="updateDetails('dananidanaya')"/>
+            </div>
+            <div class="numbers">
+              <input type="text" id="dananidanayaLatter" class="latter" oninput="updateDetails('dananidanaya')"/>
+              <input type="number" id="dananidanayaNumber-one" class="number" oninput="updateDetails('dananidanaya')"/>
+              <input type="number" id="dananidanayaNumber-two" class="number" oninput="updateDetails('dananidanaya')"/>
+              <input type="number" id="dananidanayaNumber-three" class="number" oninput="updateDetails('dananidanaya')"/>
+              <input type="number" id="dananidanayaNumber-four" class="number special" oninput="updateDetails('dananidanaya')"/>
+            </div>
+            <textarea class="text-area" id="dananidanayaSpecialResults" oninput="updateDetails('dananidanaya')"></textarea>
+
+            <div class="form-button">
+              <input type="reset" class="button reset" value="Reset" />
+            </div>
+          </form>
+  
+          <!-- Mega power form -->
+          <form id="megaPower-form" class="forms">
+            <span class="form-header">Add Today <span id="ticket-name">මෙගාපවර්</span> Results Here</span>
+            <div class="date-and-draw-number">
+              <input type="number" placeholder="Draw number" id="megaPowerDraw-number" class="inputs" oninput="updateDetails('megaPower')"/>
+              <input type="number" placeholder="Number" id="megaPowerTicketNumber" class="inputs" oninput="updateDetails('megaPower')"/>
+            </div>
+            <div class="numbers">
+              <input type="text" id="megaPowerlatter" class="latter" oninput="updateDetails('megaPower')"/>
+              <input type="number" id="megaPowernumber-one" class="special" oninput="updateDetails('megaPower')"/>
+              <input type="number" id="megaPowernumber-two" class="number" oninput="updateDetails('megaPower')"/>
+              <input type="number" id="megaPowernumber-three" class="number" oninput="updateDetails('megaPower')"/>
+              <input type="number" id="megaPowernumber-four" class="number" oninput="updateDetails('megaPower')"/>
+              <input type="number" id="megaPowernumber-five" class="number" oninput="updateDetails('megaPower')"/>
+            </div>
+            <textarea class="text-area" id="megaPowerSpecialResults" oninput="updateDetails('megaPower')"> </textarea>
+            <div class="form-button">
+              <input type="reset" class="button reset" value="Reset" />
+            </div>
+          </form>
+  
+          <!-- govisetha form -->
+          <form id="govisetha-form" class="forms">
+            <span class="form-header">Add Today <span id="ticket-name">ගොවිසෙත</span> Results Here</span>
+            <div class="date-and-draw-number">
+              <input type="number" placeholder="Draw number" id="govisethadraw-number" class="inputs" oninput="updateDetails('Govisetha')"/>
+              <input type="number" placeholder="Number" id="govisethaticketNumber"  class="inputs" oninput="updateDetails('Govisetha')"/>
+            </div>
+            <div class="numbers">
+              <input type="text" id="govisethaLatter" class="latter" oninput="updateDetails('Govisetha')"/>
+              <input type="number" id="govisethanumber-one" class="number" oninput="updateDetails('Govisetha')"/>
+              <input type="number" id="govisethanumber-two" class="number" oninput="updateDetails('Govisetha')"/>
+              <input type="number" id="govisethanumber-three" class="number" oninput="updateDetails('Govisetha')"/>
+              <input type="number" id="govisethanumber-four" class="number special" oninput="updateDetails('Govisetha')"/>
+            </div>
+            <textarea class="text-area" id="govisethaSpecialResults" oninput="updateDetails('Govisetha')"> </textarea>
+            <div class="form-button">
+              <input type="reset" class="button reset" value="Reset" />
+            </div>
+          </form>
+  
+          <!-- Hadahana form -->
+          <form id="hadahana-form" class="forms">
+            <span class="form-header">Add Today <span id="ticket-name">හදහන</span> Results Here</span>
+            <div class="date-and-draw-number">
+              <input type="number" placeholder="Draw number" id="hadahanaDraw-number" class="inputs" oninput="updateDetails('Hadahana')"/>
+              <input type="number" placeholder="Number" id="hadahanaTicketNumber"  class="inputs" oninput="updateDetails('Hadahana')"/>
+            </div>
+            <div class="numbers">
+              <div class="dropdown">
+                <button class="dropbtn">ලග්න</button>
+                <div class="dropdown-content">
+                  <a href="#" onclick="changeImage1('Lagna/1.png')" id="meesha-tb">මේෂ</a>
+                  <a href="#" onclick="changeImage1('Lagna/wrushaba.png')" id="wrushaba-tb">වෘශභ</a>
+                  <a href="#" onclick="changeImage1('Lagna/Mithuna.png')" id="mithuna-tb">මිථුන</a>
+                  <a href="#" onclick="changeImage1('Lagna/Kataka.png')" id="kataka-tb">කටක</a>
+                  <a href="#" onclick="changeImage1('Lagna/Sinha.png')" id="sinha-tb" >සිංහ</a>
+                  <a href="#" onclick="changeImage1('Lagna/kanya.png')" id="kanya-tb" >කනයා</a>
+                  <a href="#" onclick="changeImage1('Lagna/thula.png')" id="thula-tb">තුලා</a>
+                  <a href="#" onclick="changeImage1('Lagna/Wruschika.png')" id="wrushchika-tb" >වෘශ්චික</a>
+                  <a href="#" onclick="changeImage1('Lagna/Danu.png')" id="danu-tb">ධනු</a>
+                  <a href="#" onclick="changeImage1('Lagna/Makara.png')" id="makara-tb" >මකර</a>
+                  <a href="#" onclick="changeImage1('Lagna/Kumba.png')" id="kumba-tb" >කුම්භ</a>
+                  <a href="#" onclick="changeImage1('Lagna/Meena.png')" id="meena-tb" >මීන</a>
+                </div>
+              </div>
+              <input type="number" id="hadahanaNumber-one" class="number" oninput="updateDetails('Hadahana')"/>
+              <input type="number" id="hadahanaNumber-two" class="number" oninput="updateDetails('Hadahana')"/>
+              <input type="number" id="hadahanaNumber-three" class="number" oninput="updateDetails('Hadahana')"/>
+              <input type="number" id="hadahanaNumber-four" class="number special" oninput="updateDetails('Hadahana')"/>
+            </div>
+            <textarea class="text-area" id="hadahanaSpecialResults" oninput="updateDetails('Hadahana')"> </textarea>
+            <div class="form-button">
+              <input type="reset" class="button reset" value="Reset" />
+            </div>
+          </form>
+  
+          <!-- Kapruka form -->
+          <form id="kapruka-form" class="forms">
+            <span class="form-header">Add Today <span id="ticket-name">කප් රුක</span> Results Here</span>
+            <div class="date-and-draw-number">
+              <input type="number" placeholder="Draw number" id="kaprukaDraw-number" class="inputs" oninput="updateDetails('Kapruka')"/>
+            </div>
+            <div class="numbers">
+              <input type="text" id="kaprukaLatter" class="latter" oninput="updateDetails('Kapruka')"/>
+              <input type="number" id="kaprukaNumber-one" class="special" oninput="updateDetails('Kapruka')"/>
+              <input type="number" id="kaprukaNumber-two" class="number" oninput="updateDetails('Kapruka')"/>
+              <input type="number" id="kaprukaNumber-three" class="number" oninput="updateDetails('Kapruka')"/>
+              <input type="number" id="kaprukaNumber-four" class="number" oninput="updateDetails('Kapruka')"/>
+              <input type="number" id="kaprukaNumber-five" class="number" oninput="updateDetails('Kapruka')"/>
+            </div>
+
+            <textarea class="text-area" id="kaprukaSpecialResults" oninput="updateDetails('Kapruka')"> </textarea>
+
+            <div class="form-button">
+              <input type="reset" class="button reset" value="Reset" />
+            </div>
+          </form>
+  
+          <!-- Lagna form -->
+          <form id="lagna-form" class="forms" >
+            <span class="form-header">Add Today <span id="ticket-name">ලග්න වාසනාව</span> Results Here</span>
+            <div class="date-and-draw-number" class="forms toggle-form">
+              <input type="number" placeholder="Draw number" id="lagnaWasanawaDraw-number" class="inputs" oninput="updateDetails('lagnaWasanawa')"/>
+              <input type="number" placeholder="Number" id="lagnaWasanawaTicketNumber"class="inputs" oninput="updateDetails('lagnaWasanawa')"/>
+            </div>
+            <div class="numbers">
+              <div class="dropdown">
+                <button class="dropbtn">ලග්න</button>
+                <div class="dropdown-content">
+                  <a href="#" onclick="changeImage('Lagna/1.png')" id="meesha-tb">මේෂ</a>
+                  <a href="#" onclick="changeImage('Lagna/wrushaba.png')" id="wrushaba-tb">වෘශභ</a>
+                  <a href="#" onclick="changeImage('Lagna/Mithuna.png')" id="mithuna-tb">මිථුන</a>
+                  <a href="#" onclick="changeImage('Lagna/Kataka.png')" id="kataka-tb">කටක</a>
+                  <a href="#" onclick="changeImage('Lagna/Sinha.png')" id="sinha-tb" >සිංහ</a>
+                  <a href="#" onclick="changeImage('Lagna/kanya.png')" id="kanya-tb" >කනයා</a>
+                  <a href="#" onclick="changeImage('Lagna/thula.png')" id="thula-tb">තුලා</a>
+                  <a href="#" onclick="changeImage('Lagna/Wruschika.png')" id="wrushchika-tb" >වෘශ්චික</a>
+                  <a href="#" onclick="changeImage('Lagna/Danu.png')" id="danu-tb">ධනු</a>
+                  <a href="#" onclick="changeImage('Lagna/Makara.png')" id="makara-tb" >මකර</a>
+                  <a href="#" onclick="changeImage('Lagna/Kumba.png')" id="kumba-tb" >කුම්භ</a>
+                  <a href="#" onclick="changeImage('Lagna/Meena.png')" id="meena-tb" >මීන</a>
+                </div>
+              </div>
+              <input type="number" id="lagnaWasanawaNumber-one" class="number" oninput="updateDetails('lagnaWasanawa')"/>
+              <input type="number" id="lagnaWasanawaNumber-two" class="number" oninput="updateDetails('lagnaWasanawa')"/>
+              <input type="number" id="lagnaWasanawaNumber-three" class="number" oninput="updateDetails('lagnaWasanawa')"/>
+              <input type="number" id="lagnaWasanawaNumber-four" class="number" oninput="updateDetails('lagnaWasanawa')"/>
+            </div>
+            <textarea class="text-area" id="lagnaWasanawaSpecialResults" oninput="updateDetails('lagnaWasanawa')"> </textarea>
+            <div class="form-button">
+              <input type="reset" class="button reset" value="Reset" />
+            </div>
+          </form>
+  
+          <!-- Lucky7 form -->
+          <form id="lucky7-form" class="forms">
+            <span class="form-header">Add Today <span id="ticket-name">ලකී 7</span> Results Here</span>
+            <div class="date-and-draw-number">
+              <input type="number" placeholder="Draw number" id="luckyDraw-number" class="inputs" oninput="updateDetails('lucky')"/>
+            </div>
+            <div class="numbers">
+              <input type="text" id="luckyLatter" class="latter" oninput="updateDetails('lucky')"/>
+              <input type="number" id="luckyNumber-one" class="number" oninput="updateDetails('lucky')"/>
+              <input type="number" id="luckyNumber-two" class="number" oninput="updateDetails('lucky')"/>
+              <input type="number" id="luckyNumber-three" class="number" oninput="updateDetails('lucky')"/>
+              <input type="number" id="luckyNumber-four" class="number" oninput="updateDetails('lucky')"/>
+              <input type="number" id="luckyNumber-five" class="number" oninput="updateDetails('lucky')"/>
+              <input type="number" id="luckyNumber-six" class="number" oninput="updateDetails('lucky')"/>
+            </div>
+            <textarea class="text-area" id="luckySpecialResults" oninput="updateDetails('lucky')"> </textarea>
+            <div class="form-button">
+              <input type="reset" class="button reset" value="Reset" />
+            </div>
+          </form>
+  
+          <!-- shanida form -->
+          <form id="shanida-form" class="forms">
+            <span class="form-header">Add Today <span id="ticket-name">ශනිදා වාසනාව</span> Results Here</span>
+            <div class="date-and-draw-number">
+              <input type="number" placeholder="Draw number" id="shanidaWasanawaDraw-number" class="inputs" oninput="updateDetails('shanidaWasanawa')"/>
+              <input type="number" placeholder="Number" id="shanidaWasanawaTicketNumber" class="inputs" oninput="updateDetails('shanidaWasanawa')"/>
+            </div>
+            <div class="numbers">
+              <input type="text" id="shanidaWasanawaLatter" class="latter" oninput="updateDetails('shanidaWasanawa')"/>
+              <input type="text" id="shanidaWasanawaNumber-one" class="number" oninput="updateDetails('shanidaWasanawa')"/>
+              <input type="text" id="shanidaWasanawaNumber-two" class="number" oninput="updateDetails('shanidaWasanawa')"/>
+              <input type="text" id="shanidaWasanawaNumber-three" class="number" oninput="updateDetails('shanidaWasanawa')"/>
+              <input type="text" id="shanidaWasanawaNumber-four" class="number special" oninput="updateDetails('shanidaWasanawa')"/>
+            </div>
+            <textarea class="text-area" id="shanidaWasanawaSpecialResults" oninput="updateDetails('shanidaWasanawa')"> </textarea>
+            <div class="form-button">
+              <input type="reset" class="button reset" value="Reset" />
+            </div>
+          </form>
+  
+          <!-- superball form -->
+          <form id="superball-form" class="forms">
+            <span class="form-header">Add Today <span id="ticket-name">සුපර් බෝල්</span> Results Here</span>
+            <div class="date-and-draw-number">
+              <input type="number" placeholder="Draw number" id="superBallDraw-number" class="inputs" oninput="updateDetails('superBall')"/>
+              <input type="number" placeholder="Number" id="superBallTicketNumber" value="Date" class="inputs" oninput="updateDetails('superBall')"/>
+            </div>
+            <div class="numbers">
+              <input type="text" id="superBallLatter" class="latter" oninput="updateDetails('superBall')"/>
+              <input type="number" id="superBallNumber-one" class="number" oninput="updateDetails('superBall')"/>
+              <input type="number" id="superBallNumber-two" class="number" oninput="updateDetails('superBall')"/>
+              <input type="number" id="superBallNumber-three" class="number" oninput="updateDetails('superBall')"/>
+              <input type="number" id="superBallNumber-four" class="number special" oninput="updateDetails('superBall')"/>
+            </div>
+            <textarea class="text-area" id="superBallSpecialResults" oninput="updateDetails('superBall')"> </textarea>
+            <div class="form-button">
+              <input type="reset" class="button reset" value="Reset" />
+            </div>
+          </form>
+
+           <!-- sasiri form -->
+           <form id="sasiri-form" class="forms">
+            <span class="form-header">Add Today <span id="ticket-name">සසිරි</span> Results Here</span>
+            <div class="date-and-draw-number">
+              <input type="number" placeholder="Draw number" id="sasiriDraw-number" class="inputs" oninput="updateDetails('sasiri')"/>
+            </div>
+            <div class="numbers">
+              <input type="number" id="sasiriNumber-one" class="number" oninput="updateDetails('sasiri')"/>
+              <input type="number" id="sasiriNumber-two" class="number" oninput="updateDetails('sasiri')"/>
+              <input type="number" id="sasiriNumber-three" class="number" oninput="updateDetails('sasiri')"/>
+            </div>
+            <textarea class="text-area" id="sasiriSpecialResults" oninput="updateDetails('sasiri')"> </textarea>
+            <div class="form-button">
+              <input type="submit" class="button" value="submit" />
+              <input type="reset" class="button reset" value="Reset" />
+            </div>
+          </form>
+
+            <!-- jayodaform -->
+            <form id="jayoda-form" class="forms">
+                <span class="form-header">Add Today <span id="ticket-name">ජයෝදා</span> Results Here</span>
+                <div class="date-and-draw-number">
+                  <input type="number" placeholder="Draw number" id="JayodaDraw-number" class="inputs" oninput="updateDetails('Jayoda')"/>
+                  <input type="number" placeholder="Number" id="JayodaTicketNumber" value="Date" class="inputs" oninput="updateDetails('Jayoda')"/>
+                </div>
+                <div class="numbers">
+                  <input type="text" id="JayodaLatter" class="latter" oninput="updateDetails('Jayoda')"/>
+                  <input type="number" id="Jayodanumber-one" class="number" oninput="updateDetails('Jayoda')"/>
+                  <input type="number" id="JayodaNumber-two" class="number" oninput="updateDetails('Jayoda')"/>
+                  <input type="number" id="JayodaNumber-three" class="number" oninput="updateDetails('Jayoda')"/>
+                  <input type="number" id="JayodaNumber-four" class="number" oninput="updateDetails('Jayoda')"/>
+                </div>
+                <textarea class="text-area" id="JayodaSpecialResults" oninput="updateDetails('Jayoda')"> </textarea>
+                <div class="form-button">
+                  <input type="reset" class="button reset" value="Reset" />
+                </div>
+              </form>
+
+              <!-- supiri dana sampatha form -->
+          <form id="supiri-dana-sampatha-form" class="forms">
+            <span class="form-header">Add Today <span id="ticket-name">සුපිරි ධන සම්පත</span> Results Here</span>
+            <div class="date-and-draw-number">
+              <input type="number" placeholder="Draw number" id="supiridanasampathDrawNumber" class="inputs" oninput="updateDetails('supiridanasampatha')"/>
+              <input type="number" placeholder="Number" id="supiridanasampathaTicketNumber"  class="inputs" oninput="updateDetails('supiridanasampatha')"/>
+            </div>
+            <div class="numbers">
+              <input type="text" id="supiridanasampathaLatter" class="latter" oninput="updateDetails('supiridanasampatha')"/>
+              <input type="number" id="supiridanasampathaNumber-one" class="number" oninput="updateDetails('supiridanasampatha')"/>
+              <input type="number" id="supiridanasampathaNumber-two" class="number" oninput="updateDetails('supiridanasampatha')"/>
+              <input type="number" id="supiridanasampathaNumber-three" class="number" oninput="updateDetails('supiridanasampatha')"/>
+              <input type="number" id="supiridanasampathaNumber-four" class="number" oninput="updateDetails('supiridanasampatha')"/>
+              <input type="number" id="supiridanasampathaNumber-five" class="number" oninput="updateDetails('supiridanasampatha')"/>
+              <input type="number" id="supiridanasampathaNumber-six" class="number" oninput="updateDetails('supiridanasampatha')"/>
+            </div>
+            <textarea class="text-area" id="supiridanasampathaSpecialResults" placeholder="Add special results" 
+            oninput="updateDetails('supiridanasampatha')"> </textarea>
+
+            <div class="form-button">
+              <input type="reset" class="button reset" value="Reset" />
+            </div>
+          </form>
+  
+        </div>
+        <div class="display-form">
+
+          <div class="invoiceHeader">
+              <h4>ඪබ්.ඒ.පී.පී ඇලඩින් පෙරේරා, වාසනා මන්දීරය</h4>
+              <h5>32/1 පැරනි නගරය, දිගන, 077 3176969</h5>
+          </div>
+
+          <table class="resultsTable">
+
+            <tr>
+              <td class="ticketName">
+                <span>අද කෝටිපති<span><br>
+                <span id="adaKotipathiDetailsDrawNumber"></span>
+              </td>
+              <td class="resultsContent">
+                <span id="adaKotipathiDetailsLetter"></span>
+                <span id="adaKotipathiDetailsNumberOne"></span>
+                <span id="adaKotipathiDetailsNumberTwo"></span>
+                <span id="adaKotipathiDetailsNumberThree"></span>
+                <span id="adaKotipathiDetailsNumberFour"></span>
+                <span class="sNumber" id="adaKotipathiDetailsFive"></span>
+                <span class="specialNotice" id="adaKotipathiDetailsDiscription"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="ticketName">
+                <span>ධන නිදානය<span><br>
+                <span id="dhanaNidhanayaDetailsDrawNumber"></span>
+              </td>
+              <td class="resultsContent">
+                <span id="dhanaNidhanayaDetailsLetter"></span>
+                <span id="dhanaNidhanayaDetailsOne"></span>
+                <span id="dhanaNidhanayaDetailsTwo"></span>
+                <span id="dhanaNidhanayaDetailsThree"></span>
+                <span id="dhanaNidhanayaDetailsFour"></span>
+                <span class="sNumber" id="dananidanayaDetailsFive"></span>
+                <span class="specialNotice" id="dhanaNidhanayaDetailsDiscription"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="ticketName">
+                <span>ගොවිසෙත<span><br>
+                <span id="govisethaDetailsDrawNumber"></span>
+              </td>
+              <td class="resultsContent">
+                <span id="govisethaDetailsLetter"></span>
+                <span id="govisethaDetailsOne"></span>
+                <span id="govisethaDetailsTwo"></span>
+                <span id="govisethaDetailsThree"></span>
+                <span id="govisethaDetailsFour"></span>
+                <span class="sNumber" id="govisethaDetailsFive"></span>
+                <span class="specialNotice" id="govisethaDetailsDiscription"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="ticketName">
+                <span>හදහන<span><br>
+                <span id="hadhahanaDetailsDrawNumber"></span>
+              </td>
+              <td class="resultsContent">
+                <span><img style="width: 45px; height: 45px;" id="image1" src="" alt=""></span>
+                <span id="hadhahanaDetailsOne"></span>
+                <span id="hadhahanaDetailsTwo"></span>
+                <span id="hadhahanaDetailsThree"></span>
+                <span id="hadhahanaDetailsFour"></span>
+                <span class="sNumber" id="hadhahanaDetailsFive"></span>
+                <span class="specialNotice" id="hadhahanaDetailsDiscription"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="ticketName">
+                <span>කප්‍ රැක<span><br>
+                <span id="kaprukaDetailsDrawNumber"></span>
+              </td>
+              <td class="resultsContent">
+                <span id="kaprukaDetailsLetter"></span>
+                <span id="kaprukaDetailsOne"></span>
+                <span id="kaprukaDetailsTwo"></span>
+                <span id="kaprukaDetailsThree"></span>
+                <span id="kaprukaDetailsFour"></span>
+                <span id="kaprukaDetailsFive"></span>
+                <span class="specialNotice" id="kaprukaDetailsDiscription"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="ticketName">
+                <span>ලග්න වාසනාව<span><br>
+                <span id="lagnaWasanawaDetailsDrawNumber"></span>
+              </td>
+              <td class="resultsContent">
+                <span><img style="width: 45px; height: 45px;" id="image" src="" alt=""></span>
+                <span id="lagnaWasanawaDetailsOne"></span>
+                <span id="lagnaWasanawaDetailsTwo"></span>
+                <span id="lagnaWasanawaDetailsThree"></span>
+                <span id="lagnaWasanawaDetailsFour"></span>
+                <span class="sNumber" id="lagnaWasanawaDetailsFive"></span>
+                <span class="specialNotice" id="lagnaWasanawaDetailsDiscription"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="ticketName">
+                <span>ලකී 7<span><br>
+                <span id="luckyDetailsDrawNumber"></span>
+              </td>
+              <td class="resultsContent">
+                <span id="luckyDetailsLetter"></span>
+                <span id="luckyDetailsOne"></span>
+                <span id="luckyDetailsTwo"></span>
+                <span id="luckyDetailsThree"></span>
+                <span id="luckyDetailsFour"></span>
+                <span id="luckyDetailsFive"></span>
+                <span id="luckyDetailsSix"></span>
+                <span class="specialNotice" id="luckyDetailsDiscription"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="ticketName">
+                <span>මහජන සම්පත<span><br>
+                <span id="mahajanaSampathaDetailsDrawNumber"></span>
+              </td>
+              <td class="resultsContent">
+                <span id="mahajanaSampathaDetailsLetter"></span>
+                <span id="mahajanaSampathaDetailsOne"></span>
+                <span id="mahajanaSampathaDetailsTwo"></span>
+                <span id="mahajanaSampathaDetailsThree"></span>
+                <span id="mahajanaSampathaDetailsFour"></span>
+                <span id="mahajanaSampathaDetailsFive"></span>
+                <span id="mahajanaSampathaDetailsSix"></span>
+                <span class="specialNotice" id="mahajanaSampathaDetailsDiscription"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="ticketName">
+                <span>මෙගා පවර්<span><br>
+                <span id="megaPowerDetailsDrawNumber"></span>
+              </td>
+              <td class="resultsContent">
+                <span id="megaPowerDetailsLetter"></span>
+                <span id="megaPowerDetailsOne"></span>
+                <span id="megaPowerDetailsTwo"></span>
+                <span id="megaPowerDetailsThree"></span>
+                <span id="megaPowerDetailsFour"></span>
+                <span id="megaPowerDetailsFive"></span>
+                <span class="sNumber" id="megaPowerDetailsSix"></span>
+                <span class="specialNotice" id="megaPowerDetailsDiscription"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="ticketName">
+                <span>ශනිදා වාසනාව<span><br>
+                <span id="shanidhaWasanawaDetailsDrawNumber"></span>
+              </td>
+              <td class="resultsContent">
+                <span id="shanidhaWasanawaDetailsLetter"></span>
+                <span id="shanidhaWasanawaDetailsOne"></span>
+                <span id="shanidhaWasanawaDetailsTwo"></span>
+                <span id="shanidhaWasanawaDetailsThree"></span>
+                <span id="shanidhaWasanawaDetailsFour"></span>
+                <span class="sNumber" id="shanidhaWasanawaDetailsFive"></span>
+                <span class="specialNotice" id="shanidhaWasanawaDetailsDiscription"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="ticketName">
+                <span>සුපර් බෝල්<span><br>
+                <span id="superBallDetailsDrawNumber"></span>
+              </td>
+              <td class="resultsContent">
+                <span id="superBallDetailsLetter"></span>
+                <span id="superBallDetailsOne"></span>
+                <span id="superBallDetailsTwo"></span>
+                <span id="superBallDetailsThree"></span>
+                <span id="superBallDetailsFour"></span>
+                <span class="sNumber" id="superBallDetailsFive"></span>
+                <span class="specialNotice" id="superBallDetailsDiscription"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="ticketName">
+                <span>සුපිරි ධන සම්පත<span><br>
+                <span id="supiriDhanaNidhanayaDetailsDrawNumber"></span>
+              </td>
+              <td class="resultsContent">
+                <span id="supiriDhanaNidhanayaDetailsLetter"></span>
+                <span id="supiriDhanaNidhanayaDetailsOne"></span>
+                <span id="supiriDhanaNidhanayaDetailsTwo"></span>
+                <span id="supiriDhanaNidhanayaDetailsThree"></span>
+                <span id="supiriDhanaNidhanayaDetailsFour"></span>
+                <span id="supiriDhanaNidhanayaDetailsFive"></span>
+                <span id="supiriDhanaNidhanayaDetailsSix"></span>
+                <span class="sNumber" id="supiriDhanaNidhanayaDetailsSeven"></span>
+                <span class="specialNotice" id="supiriDhanaNidhanayaDetailsDiscription"></span>
+              </td>
+            </tr>
+
+            <tr id="jayoda-Ticket">
+              <td class="ticketName">
+                <span>ජයෝදා<span><br>
+                <span id="jayodhaDetailsDrawNumber"></span>
+              </td>
+              <td class="resultsContent">
+                <span id="jayodhaDetailsLetter"></span>
+                <span id="jayodhaDetailsOne"></span>
+                <span id="jayodhaDetailsTwo"></span>
+                <span id="jayodhaDetailsThree"></span>
+                <span id="jayodhaDetailsFour"></span>
+                <span class="sNumber" id="jayodhaDetailsFive"></span>
+                <span class="specialNotice" id="jayodhaDetailsDiscription"></span>
+              </td>
+            </tr>
+
+            <tr id="sasiri-ticket">
+              <td class="ticketName">
+                <span>සසිරී<span><br>
+                <span id="sasiriDetailsDrawNumber"></span>
+              </td>
+              <td class="resultsContent">
+                <span id="sasiriDetailsLetter"></span>
+                <span id="sasiriDetailsOne"></span>
+                <span id="sasiriDetailsTwo"></span>
+                <span class="specialNotice" id="sasiriDetailsDiscription"></span>
+              </td>
+            </tr>
+
+          </table>
+
+          <div class="details">
+            <div class="year">
+              <span id="setTodayDate"></span>
+            </div>
+            <div class="date">
+              <span id="setDayName"></span>
+            </div>
+          </div>
+
+          <div class="noties">
+            <span></span>
+          </div>
+        </div>
+      </div>
+      <div class="down_button">
+        <input type="button" class="download" name="" value="Download Results" 
+            onclick="downloadAllDetails()">
+      </div>
+    </div>
+  </body>
+
+
+<script src="script.js"></script>
+  
+</html>
+  

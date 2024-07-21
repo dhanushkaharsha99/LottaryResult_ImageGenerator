@@ -1,0 +1,417 @@
+
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #404040;
+  }
+  ::-webkit-scrollbar{
+    display: none;
+  
+  }
+  
+  .container{
+    display: flexbox;
+    flex-wrap: wrap;
+    height:70vh;
+    width: 100%;
+  }
+  .body{
+    width: 100%;
+    display: flex;
+    gap: 1vw;
+    justify-content: center;
+    margin-top: 1VW;
+  }
+  
+  .header {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: normal;
+    border-radius: 2vw;
+    background-color: #244CDB;
+  }
+
+  #today-date{
+    color: aliceblue;
+    margin-top: -2vw;
+    font: 1em sans-serif;
+  }
+  h3{
+    font-size: 2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    font-weight: 900;
+    margin-top: -0.5vw;
+  }
+  .stroke-text{
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: #ffffff;
+  }
+  
+  #ticket-name{
+    font-weight: bold;
+  }
+  
+  .button-container{
+    align-items: center;
+    justify-content: center;
+    border-radius: 2vw;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    padding: 1vw;
+    background-color: rgba(121, 152, 187, 0.71); 
+    filter: drop-shadow(5px 4px 17px rgba(0, 0, 0, 0.25));
+  }
+  
+  .button{
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 3vw;
+    background-color: #EEAF4B;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+    border-radius: 2vw;
+    background-color: rgba(121, 152, 187, 0.71); 
+    filter: drop-shadow(5px 4px 17px rgba(0, 0, 0, 0.25));
+   
+  }
+  .form-header{
+    margin-top: 2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+  }
+
+  #mahajana-sampatha-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  #adakotipathi-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  #megaPower-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  #govisetha-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  #hadahana-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  #kapruka-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  #lagna-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  #lucky7-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  #shanida-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  #superball-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  #superball-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #sasiri-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  #jayoda-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  #dananidanaya-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  #supiri-dana-sampatha-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  .date-and-draw-number{
+    display: flex;
+    width: 100%;
+    gap: 2vw;
+    justify-content: space-between;
+    margin-top: 3vw;
+  }
+  .special{
+    background-color: #0587FF;
+  }
+  .form-button{
+    display: flex;
+    margin-top: 2vw;
+    gap: 1vw;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .reset{
+    background-color: #ee4b4b;
+    color: white;
+  }
+  .display-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 38%;
+    height: auto;
+    border-radius: 2vw;
+    background-color: rgba(121, 152, 187, 0.71); 
+    filter: drop-shadow(5px 4px 17px rgba(0, 0, 0, 0.25));
+  }
+  .inputs{
+    width: 35%;
+    height: 2vw;
+    outline: none;
+  }
+  .latter{
+   text-align: center;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 2vw;
+    outline: none;
+    font-size: 2em;
+    background-color: #0587FF;
+    border: 2px solid white;
+  }
+  .lagnaya{
+    text-align: center;
+     width: 7vw;
+     height: 4vw;
+     outline: none;
+     background-color: #0587FF;
+     border: 2px solid white;
+   }
+  .special{
+    text-align: center;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 2vw;
+    font-size: 2em;
+    outline: none;
+    border: none;
+    background-color: #ee4b4b;
+    margin-top: 3vw;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+   margin: 0;
+}
+  .number{
+    text-align: center;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 2vw;
+    outline: none;
+    font-size: 2em;
+    font-weight: bold;
+    border: none;
+    background-color: #EEAF4B;
+    margin-top: 3vw
+  }
+  
+  .text-area{
+    width: 90%;
+    height: 5vw;
+    margin-top: 3vw;
+    outline: none;
+  }
+  
+  .clicked-button-color{
+    background-color: #ffffff;
+  }
+
+.display-form .invoiceHeader{
+  width: 92%;
+  margin: 20px 0px;
+}
+
+.display-form .invoiceHeader h4{
+  text-align: center;
+  margin: 0px 0px 5px 0px;
+}
+
+.display-form .invoiceHeader h5{
+  text-align: center;
+  margin:0px;
+}
+ 
+.display-form table, tr{
+    border: 3px solid #4d4d4d;
+}
+
+.display-form .resultsTable{
+   border-collapse: collapse;
+   width: 92%;
+}
+
+.display-form .resultsTable tr td{
+  padding: 5px;
+  text-align: center;
+
+}
+.display-form .resultsTable tr .ticketName{
+    width: 200px;
+    height: 30px;
+}
+
+.display-form .resultsTable tr .resultsContent{
+    display: flex;
+    width: 280px;
+    height: 30px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.display-form .resultsTable tr .resultsContent .sNumber{
+  padding: 5px 10px;
+  border: 2px solid #404040;
+  border-radius: 5px;
+}
+
+.display-form .details{
+  margin: 10px 0px;
+  width: 92%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.display-form .resultsTable tr .resultsContent .specialNotice{
+  position: absolute;
+  margin-top: 50px;
+  padding: 2px;
+  width: auto;
+  background-color: #999999;
+}
+
+.display-form .details .year, .date{
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: 2px solid #4d4d4d;
+  border-radius: 5px;
+}
+
+.noties{
+  margin-bottom: 20px;
+  height: auto;
+  padding: 10px 10px;
+  width: 88%;
+  background-color: #999999;
+  border-radius: 5px;
+}
+
+.download{
+  width: 92%;
+  height: 40px;
+  font-size: 17px;
+  background-color: #29a329;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: 0.3s ease;
+  border-bottom: 20px;
+}
+
+.display-form .download:hover {
+   background-color: #196619;
+}
+.down_button{
+  display: flex;
+  align-self:flex-end;
+  float: right;
+  flex-flow: nowrap;
+}
+
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
